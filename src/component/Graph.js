@@ -7,7 +7,6 @@ const Graph=({...props})=> {
     useEffect(()=>{ getUserData()},[]);
     const getUserData=async ()=>{
         const user=await data
-        console.log('Response is',user)
         setUserdata(user)
     }
     return (
