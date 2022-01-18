@@ -5,6 +5,8 @@ import React, { useEffect, useState } from 'react';
 import Featuredinfo from '../../featuredinfo/Featuredinfo';
 import GraphChart from '../../chart/GraphChart';
 import data from '../../../importdata';
+import Widgetsm from '../../widgetsm/Widgetsm';
+import WidgetLg from '../../widgetLg/WidgetLg';
 
 function Home() {
     const [userData,setUserdata] = useState({});
@@ -15,10 +17,14 @@ function Home() {
     }
     return (
         <div className='home'>
-           <Featuredinfo />
+            <Featuredinfo />
             <GraphChart data={userData} title= {'Staff Reporting'} xaxis= {'Week Ended'} line={'Voltage'}/>   
+            <div className="homeWidgets">
+                <Widgetsm/>
+                <WidgetLg />
+            </div>
         </div>
     )
 }
 
-export default Home
+export default Home;
