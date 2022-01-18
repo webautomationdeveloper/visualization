@@ -1,22 +1,14 @@
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
-import React, { useEffect, useState } from 'react';
-import data from '../importdata';
 
-const Graph=({...props})=> {
-    const [userData,setUserdata] = useState({});
-    useEffect(()=>{ getUserData()},[]);
-    const getUserData=async ()=>{
-        const user=await data
-        setUserdata(user)
-    }
+const Linechart=({data,xaxis,line})=> {
+  
     return (
         <div>
-           <h1>Line Chart</h1>  
            <ResponsiveContainer width="100%" aspect={3}>
                     <LineChart
                     width={500}
                     height={300}
-                    data={userData}
+                    data={data}
                     margin={{
                         top: 5,
                         right: 30,
@@ -25,11 +17,11 @@ const Graph=({...props})=> {
                     }}
                     >
                     <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey={'Week Ended'} />
+                    <XAxis dataKey={xaxis} />
                     <YAxis />
                     <Tooltip />
                     <Legend />
-                    <Line type="monotone" dataKey={'Voltage'} stroke="#8884d8" activeDot={{ r: 8 }} />
+                    <Line type="monotone" dataKey={line} stroke="#8884d8" activeDot={{ r: 8 }} />
                     </LineChart>
                 </ResponsiveContainer>
                    
@@ -37,4 +29,4 @@ const Graph=({...props})=> {
     )
 }
 
-export default Graph;
+export default Linechart;

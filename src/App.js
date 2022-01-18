@@ -1,8 +1,11 @@
-import GraphChart from './component/Graph';
+
 import React from 'react';
 import Topbar from './component/topbar/Topbar';
 import Sidebar from './component/sidebar/Sidebar';
 import './App.css';
+import Home from './component/pages/home/Home';
+
+
 
 function App() {
   return (
@@ -12,7 +15,7 @@ function App() {
         <div className='container'>
           <Sidebar />
           <div className='content'>
-            <GraphChart />
+           <Home />
           </div>
         </div>
       
