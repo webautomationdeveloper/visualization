@@ -4,22 +4,33 @@ import Topbar from './component/topbar/Topbar';
 import Sidebar from './component/sidebar/Sidebar';
 import './App.css';
 import Home from './component/pages/home/Home';
-
+import {
+  BrowserRouter,
+  Routes,
+  Route
+} from "react-router-dom";
+import UserList from './component/pages/userList/UserList';
 
 
 function App() {
   return (
-    <div >
-      
+    <BrowserRouter>
         <Topbar/>
         <div className='container'>
           <Sidebar />
-          <div className='content'>
-           <Home />
-          </div>
+          
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/user" element={<UserList />} />
+           
+          </Routes>
+  
+         
+         
+        
+          
         </div>
-      
-    </div>
+   </BrowserRouter>
   );
 }
 
